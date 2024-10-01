@@ -55,11 +55,12 @@ Our work focuses on *in-memory read-heavy* workloads. Given a key set  K, we gen
 * **Uniform:**  Every key in K has an equal likelihood of being sampled.
 * **Zipfan:** The probability of sampling the i-th key in K is given by p(i)=i<sup>α</sup>/∑<sub>j=1</sub><sup>N</sup>j<sup>α</sup>. For the Zipfan workload, by default, we set the parameter α=1.3 such that over 90% of index accesses occur within the range of (0, 10<sup>3</sup>].
 
-The detail sampling method for these two Query Workloads are in main_**dataset** folder. dataset = fb/wiki/books/osm/uniform/normal/lognormal.  
-这里要放个main_fb的中链接。
+The detail sampling method for these two Query Workloads are in main_**dataset** folder. dataset = fb/ wiki/ books/ osm/ uniform/ normal/ lognormal.  
 
-我们测试了
-
+Run：
+```C++
+make -f Makefile_all run_all
+```
 
 
 
