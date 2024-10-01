@@ -15,7 +15,7 @@ All keys are stored as 64-bit unsigned integers (`uint64_t` in C++). Table 1 sum
 
 **Table 1: Statistics of benchmark datasets.**
 
-| Dataset | Category | #Keys | Raw Size | $h_D$ | $\overline{Cov}$ |
+| Dataset | Category | Keys | Raw Size | $h_D$ | $\overline{Cov}$ |
 |---|---|---|---|---|---|
 | fb | Real | 200 M | 1.6 GB | 3.88 | 94 |
 | wiki | Real | 200 M | 1.6 GB | 1.77 | 877 |
@@ -41,6 +41,8 @@ All keys are stored as 64-bit unsigned integers (`uint64_t` in C++). Table 1 sum
 RMI code: https://github.com/learnedsystems/RMI/tree/master  
 This is a reference implementation of recursive model indexes (RMIs). A prototype RMI was initially described in [The Case for Learned Index Structures (https://arxiv.org/abs/1712.01208) by Kraska et al. in 2017.  
 
+
+
 ```C++
 cargo run --release -- --optimize (optimizer_out_wiki.json)JSON_PATH wiki_200M_uint64
 cargo run wiki_200M_uint64 --param-grid (optimizer_out_wiki.json)JSON_PATH -d YOUR_RMI_SAVE_FOLDER --threads 8 --zero-build-time
@@ -55,9 +57,9 @@ Our work focuses on *in-memory read-heavy* workloads. Given a key set  K, we gen
 * **Uniform:**  Every key in K has an equal likelihood of being sampled.
 * **Zipfan:** The probability of sampling the i-th key in K is given by p(i)=i<sup>α</sup>/∑<sub>j=1</sub><sup>N</sup>j<sup>α</sup>. For the Zipfan workload, by default, we set the parameter α=1.3 such that over 90% of index accesses occur within the range of (0, 10<sup>3</sup>].
 
-The detail sampling method for these two Query Workloads are in main_**dataset** folder. dataset = fb/ wiki/ books/ osm/ uniform/ normal/ lognormal.  
+The detailed sampling method for these two query workloads is in the main_**dataset** folder. dataset can be fb, wiki, books, osm, uniform, normal, or lognormal.
 
-Run：
+To run the benchmarks:
 ```C++
 make -f Makefile_all run_all
 ```
