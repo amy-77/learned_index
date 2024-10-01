@@ -4,12 +4,12 @@ We adopt 4 real datasets from SOSD [1]
 
 Specifically:
 
-* **[fb](https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/JGVF9A/EATHF7):** A set of user IDs randomly sampled from Facebook [7].
-* **[wiki](https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/JGVF9A/SVN8PI):** A set of edit timestamp IDs committed to Wikipedia [8].
+* **[fb](https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/JGVF9A/EATHF7):** A set of user IDs randomly sampled from Facebook [2].
+* **[wiki](https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/JGVF9A/SVN8PI):** A set of edit timestamp IDs committed to Wikipedia [3].
 * **[books](https://www.dropbox.com/s/y2u3nbanbnbmg7n/books_800M_uint64.zst?dl=1):** A dataset of book popularity from Amazon.
-* **[osm_cellids](https://www.dropbox.com/s/j1d4ufn4fyb4po2/osm_cellids_800M_uint64.zst?dl=1):** A set of cell IDs from OpenStreetMap [9].
+* **[osm_cellids](https://www.dropbox.com/s/j1d4ufn4fyb4po2/osm_cellids_800M_uint64.zst?dl=1):** A set of cell IDs from OpenStreetMap [4].
 
-We also generate 3 synthetic datasets by sampling from uniform, normal, and log-normal distributions, following a process similar to [1, 10]. 
+We also generate 3 synthetic datasets by sampling from uniform, normal, and log-normal distributions, following a process similar to [1, 5]. 
 
 All keys are stored as 64-bit unsigned integers (`uint64_t` in C++). Table 1 summarizes the dataset statistics.
 
@@ -28,10 +28,10 @@ All keys are stored as 64-bit unsigned integers (`uint64_t` in C++). Table 1 sum
 
 **References:**  
 [1] Marcus, et al. SOSD: A Benchmark Suite for Similarity Search over Sorted Data. PVLDB, 2020.  
-[7] Sandt, et al.  Facebook's Data Infrastructure at Scale. SIGMOD, 2019.  
-[8] Wikidata. [https://www.wikidata.org/wiki/Wikidata:Main_Page](https://www.wikidata.org/wiki/Wikidata:Main_Page)  
-[9] OpenStreetMap. [https://www.openstreetmap.org/](https://www.openstreetmap.org/)  
-[10] Zhang, et al. Making Learned Indexes Practical: A Comprehensive Study on Data Distribution and Model Selection. PVLDB, 2024.  
+[2] Sandt, et al.  Facebook's Data Infrastructure at Scale. SIGMOD, 2019.  
+[3] Wikidata. [https://www.wikidata.org/wiki/Wikidata:Main_Page](https://www.wikidata.org/wiki/Wikidata:Main_Page)  
+[4] OpenStreetMap. [https://www.openstreetmap.org/](https://www.openstreetmap.org/)  
+[5] Zhang, et al. Making Learned Indexes Practical: A Comprehensive Study on Data Distribution and Model Selection. PVLDB, 2024.  
 
 
 ## II. RUN RMI to generate results:
